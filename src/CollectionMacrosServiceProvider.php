@@ -4,8 +4,6 @@ namespace Liyuze\CollectionMacros;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
-use JetBrains\PhpStorm\ArrayShape;
-use JetBrains\PhpStorm\Pure;
 use Liyuze\CollectionMacros\Macros\IfMacros;
 
 class CollectionMacrosServiceProvider extends ServiceProvider
@@ -54,8 +52,8 @@ class CollectionMacrosServiceProvider extends ServiceProvider
     public function macros()
     {
         return [
-            'ifThen'      => IfMacros::ifThen(),
-            'unlessThen'  => IfMacros::unlessThen(),
+            'ifThen'     => IfMacros::ifThen(),
+            'unlessThen' => IfMacros::unlessThen(),
         ];
     }
 }

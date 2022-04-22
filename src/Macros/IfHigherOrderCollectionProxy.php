@@ -39,24 +39,28 @@ class IfHigherOrderCollectionProxy
     public function ifThen(mixed $value): static
     {
         $this->when = boolval(value($value));
+
         return $this;
     }
 
     public function unlessThen(mixed $value): static
     {
-        $this->when = !boolval(value($value));
+        $this->when = ! boolval(value($value));
+
         return $this;
     }
 
     public function else(): static
     {
-        $this->when = !$this->when;
+        $this->when = ! $this->when;
+
         return $this;
     }
 
     public function after(callable $callback): static
     {
         $this->value = $callback($this->value, $this->collection);
+
         return $this;
     }
 
@@ -78,6 +82,7 @@ class IfHigherOrderCollectionProxy
         if ($this->when) {
             $this->value = is_array($this->value) ? $this->value[$key] : $this->value->{$key};
         }
+
         return $this;
     }
 
@@ -91,6 +96,7 @@ class IfHigherOrderCollectionProxy
         if ($this->when) {
             $this->value = $this->value->{$method}(...$parameters);
         }
+
         return $this;
     }
 }

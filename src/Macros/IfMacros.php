@@ -14,7 +14,7 @@ class IfMacros
     public static function unlessThen()
     {
         return function (mixed $value): IfHigherOrderCollectionProxy {
-            return new IfHigherOrderCollectionProxy($this, !boolval(value($value)));
+            return new IfHigherOrderCollectionProxy($this, ! boolval(value($value)));
         };
     }
 }
